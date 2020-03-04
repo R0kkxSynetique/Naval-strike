@@ -1,8 +1,6 @@
 #ifndef BATAILLE_NAVALE_IDK_H
 #define BATAILLE_NAVALE_IDK_H
 
-#endif //BATAILLE_NAVALE_IDK_H
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <dir.h>
@@ -61,3 +59,4 @@ void file() {
     }
 }
 
+#endif //BATAILLE_NAVALE_IDK_H

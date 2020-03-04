@@ -8,8 +8,6 @@
 #ifndef BATAILLE_NAVALE_MENU_H
 #define BATAILLE_NAVALE_MENU_H
 
-#endif //BATAILLE_NAVALE_MENU_H
-
 void affichagemenu(){
     printf("menu principal\n");
     printf("1 - Jouer\n");
@@ -33,9 +31,11 @@ void menuprincipal(){
                 file();
                 break;
             default:
-                printf("\nErreur! Ce choix n'est pas disponible");
+                printf("\nErreur! Ce choix n'est pas disponible\n");
                 error = 1;
+                affichagemenu();
 
         }
     }
 }
+#endif //BATAILLE_NAVALE_MENU_H

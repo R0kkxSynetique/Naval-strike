@@ -1,9 +1,12 @@
-#ifndef BATAILLE_NAVALE_IDK_H
-#define BATAILLE_NAVALE_IDK_H
+//
+// Created by benjamin on 04.03.2020.
+//
+
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <dir.h>
+#include "file.h"
 
 #define MAX_TEXT_LENGTH 255
 
@@ -19,7 +22,7 @@ void file() {
         exit(1);
     }
 
-    fptr = fopen("C:\\Users\\Benjamin.FONTANA\\Documents\\GitHub\\Prog-C\\Naval-strike\\logs.txt", "a");
+    fptr = fopen("logs.txt", "a");
     fclose(fptr);
 
     //demande pseudo
@@ -32,7 +35,7 @@ void file() {
 
         //affiche historique scores + username
         system("cls");
-        fptr = fopen("C:\\Users\\Benjamin.FONTANA\\Documents\\GitHub\\Prog-C\\Naval-strike\\logs.txt", "r");
+        fptr = fopen("logs.txt", "r");
         while (1) {
             fgets(score, MAX_TEXT_LENGTH, fptr);
             if (feof(fptr)) {
@@ -53,10 +56,8 @@ void file() {
         }
 
         //ajout texte dans fichier
-        fptr = fopen("C:\\Users\\Benjamin.FONTANA\\Documents\\GitHub\\Prog-C\\Naval-strike\\logs.txt", "a");
+        fptr = fopen("logs.txt", "a");
         fprintf(fptr, "%s: %s\n", username, score);
         fclose(fptr);
     }
 }
-
-#endif //BATAILLE_NAVALE_IDK_H

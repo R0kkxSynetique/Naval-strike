@@ -1,9 +1,13 @@
+/**
+ * @author: Benjamin Fontana
+ * @date: 04.03.2020
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <dir.h>
-
-#include "Menu.h"
+#include "menu.h"
 
 /**
  * regle du jeu
@@ -11,8 +15,6 @@
 void aide(){
     printf("Voici l'aide pour apprendre a jouer.\n");
 }
-
-
 
 /**
  * appel les fonctions
@@ -30,7 +32,8 @@ int main()
     // affiche la liste des scores precedent
     // menu de type console
     // CODE COMMANTE !!!!!
-    affichagemenu();
+
+    affichageMenuPrincipal();
     menuprincipal();
 
     return 0;

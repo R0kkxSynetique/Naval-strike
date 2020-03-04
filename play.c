@@ -1,14 +1,12 @@
 //
-// Created by benjamin.fontana on 28.02.2020.
+// Created by benjamin on 28.02.2020.
 //
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <dir.h>
-
-
-#ifndef BATAILLE_NAVALE_JOUER_H
-#define BATAILLE_NAVALE_JOUER_H
+#include "play.h"
 
 #define MAX_LINE 10
 #define MAX_ROW 10
@@ -72,4 +70,3 @@ void jeu() {
     } while (bateaux > 0);
 }
 
-#endif //BATAILLE_NAVALE_JOUER_H

@@ -46,7 +46,7 @@ void file() {
         fclose(fptr);
 
 
-        //ecrire score
+        //ecrit le score
         fflush(stdin);
         gets(score);
 
@@ -55,7 +55,7 @@ void file() {
             break;
         }
 
-        //ajout texte dans fichier
+        //ajoute le texte dans un fichier
         fptr = fopen("logs.txt", "a");
         fprintf(fptr, "%s: %s\n", username, score);
         fclose(fptr);

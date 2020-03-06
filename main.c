@@ -1,20 +1,9 @@
 /**
  * @author: Benjamin Fontana
- * @date: 04.03.2020
+ * @date: 06.03.2020
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <dir.h>
 #include "menu.h"
-
-/**
- * regle du jeu
- */
-void aide(){
-    printf("Voici l'aide pour apprendre a jouer.\n");
-}
 
 /**
  * appel les fonctions

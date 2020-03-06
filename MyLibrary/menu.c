@@ -11,22 +11,25 @@
 #include "aide.h"
 
 void affichageMenuPrincipal(){
-    printf("menu principal\n");
-    printf("1 - Jouer\n"
-           "2 - Scores\n"
-           "3 - Aide\n"
-           "4 - Quitter\n");
+    printf(" Menu principal\n"
+           "     ---\n");
+    printf("  1 - Jouer\n"
+           "  2 - Scores\n"
+           "  3 - Aide\n"
+           "  4 - Quitter\n");
 }
 
 void menuprincipal(){
     int choixjoueur,
             error = 0;
     do{
+        fflush(stdin);
         scanf("%d",&choixjoueur);
         switch (choixjoueur)
         {
             case 1:
                 jeu();
+                menuprincipal();
                 break;
             case 2:
                 file();
@@ -34,10 +37,12 @@ void menuprincipal(){
             case 3:
                 afiicherRegle();
                 break;
+            case 4:
+                system("exit");
             default:
                 printf("\nErreur! Ce choix n'est pas disponible\n");
                 affichageMenuPrincipal();
-                error = 0;
+                error = 1;
         }
-    }while (error == 1);
+    }while (error == 0);
 }

@@ -3,6 +3,7 @@
  * @date: 06.03.2020
  */
 
+#include <windows.h>
 #include "MyLibrary/menu.h"
 
 /**
@@ -11,17 +12,16 @@
 int main()
 {
     //TODO plateau 10x10
-    // regle
-    // 10 bateaux(4x 2 3x 3 2x 4 1x 5)
-    // trouver comment faire un tableau X|
-    // afficher l'adie du jeu
+    // 5 bateaux(1x2 2x3 2x4 1x5)
     // creer des utilisateurs
     // pouvoir se logger en tant qu'utilisateur(pas besoin de stocker)
     // choisis une grille rnd dans un repertoire et l'utilise
     // affiche la liste des scores precedent
     // menu de type console
     // CODE COMMANTE !!!!!
-
+    //fullscreen
+    SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE),CONSOLE_FULLSCREEN_MODE,0);
+    system("cls");
     affichageMenuPrincipal();
     menuprincipal();
 

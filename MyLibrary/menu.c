@@ -29,13 +29,16 @@ void menuprincipal(){
         {
             case 1:
                 jeu();
-                menuprincipal();
+                system("cls");
+                affichageMenuPrincipal();
                 break;
             case 2:
                 file();
                 break;
             case 3:
                 afiicherRegle();
+                _sleep(35000);
+                affichageMenuPrincipal();
                 break;
             case 4:
                 system("exit");

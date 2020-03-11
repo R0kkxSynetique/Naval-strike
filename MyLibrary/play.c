@@ -31,6 +31,19 @@ void jeu() {
             {0, 0, 0, 0, 4, 4, 4, 4, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     };
+    int playerBoard[MAX_LINE][MAX_ROW] = {          //Grille que le joueur verra
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+
+    };
 
     do {
 
@@ -56,9 +69,15 @@ void jeu() {
                 printf("%d ", lineNumber);
             }
             lineNumber += 1;
+
             //affiche les bordures vertical inter-ligne
             for (int j = 0; j < MAX_LINE; j++) {
-                printf("%c %d ", 186, board[i][j]);
+                if (playerBoard[i][j] > 0) {
+                    printf("%c %c ", 186, 'X');
+                } else {
+                    printf("%c %d ", 186, playerBoard[i][j]);
+                }
+
             }
 
             //affiche la derniere bordure verticale inter-ligne
@@ -93,6 +112,7 @@ void jeu() {
         convertedX -= 1;
         y -= 1;
         board[y][x] -= 1;
+        playerBoard[y][x] += 1;
 
         //Si la valeur du tableau est pas de l'eau alors...
         if (board[y][x] > 0) {
@@ -133,14 +153,14 @@ void jeu() {
             }
 
             if (boat5 > 0) {
-                if (board[2][8] < 5 && board[3][8] < 5 && board[4][8] < 5 && board[5][8] < 5 && board[6][8] < 5) {   //bateau(5) I3 I7
+                if (board[2][8] < 5 && board[3][8] < 5 && board[4][8] < 5 && board[5][8] < 5 &&
+                    board[6][8] < 5) {   //bateau(5) I3 I7
                     printf("\nTouche coule !");
                     boat5 = 0;
                     bateaux -= 1;
                 }
             }
-        }
-        else {
+        } else {
             printf("\nPlouf !");
         }
 
@@ -154,6 +174,5 @@ void jeu() {
 
     //message de victoire
     printf("\nVous avez gagne en faisant %d tirs!\n", tirs);
-
-    system("pause");
+    _sleep(1000);
 }

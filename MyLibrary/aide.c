@@ -7,7 +7,8 @@
 
 
 void afiicherRegle(){
-    printf("Regle\n"
+    printf("\n"
+           "Regle\n"
            "Votre flotte a 5 bateaux qui sont les suivant:\n"
            "1 porte-avion(5 cases)\n"
            "1 croiseur(4 cases)\n"
@@ -20,6 +21,5 @@ void afiicherRegle(){
            "sur une case de l'adversaire: exemple, B.3. le but est\n"
            "donc de couler les bateaux adverses. au fur et\n"
            "a mesure des \"marqueurs\" serons affiche afin de se\n"
-           "souvenir de vos tirs passes.\n"
-           "1 - Quitter");
+           "souvenir de vos tirs passes.\n\n");
 }

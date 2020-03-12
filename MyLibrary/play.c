@@ -72,12 +72,15 @@ void jeu() {
 
             //affiche les bordures vertical inter-ligne
             for (int j = 0; j < MAX_LINE; j++) {
-                if (playerBoard[i][j] > 0) {
-                    printf("%c %c ", 186, 'X');
-                } else {
-                    printf("%c %d ", 186, playerBoard[i][j]);
+                if (playerBoard[i][j] > 0 && board[i][j] > 0) {
+                    printf("%c %c ", 186, 254);
                 }
-
+                if (playerBoard[i][j] > 0 && board[i][j] <= 0){
+                    printf("%c%c%c%c", 186, 176, 176, 176);
+                }
+                if (playerBoard[i][j] == 0) {
+                    printf("%c   ", 186);
+                }
             }
 
             //affiche la derniere bordure verticale inter-ligne

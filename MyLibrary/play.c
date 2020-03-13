@@ -180,8 +180,10 @@ void jeu() {
 
     } while (bateaux > 0);
 
+    system("cls");
+
     //message de victoire
-    printf("\nVous avez gagne en faisant %d tirs!\n", tirs);
+    printf("\nVous avez fini en faisant %d tirs!\n", tirs);
 
     //pause de 1 sec
     _sleep(5000);

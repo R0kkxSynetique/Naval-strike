@@ -47,6 +47,7 @@ void menuprincipal(){
                 file();
                 break;
             case 3:
+                system("cls");
                 afiicherRegle();
                 _sleep(35000);
                 break;

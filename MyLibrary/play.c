@@ -114,7 +114,11 @@ void jeu() {
         //modifie la valeur pour correspondre a la plage 0:0 9:9
         convertedX -= 1;
         y -= 1;
+
+        //modifie la valeur de l emplacement du tir
         board[y][x] -= 1;
+
+        //modifie la valeur de l affichage du tir
         playerBoard[y][x] += 1;
 
         //Si la valeur du tableau est pas de l'eau alors...
@@ -122,6 +126,7 @@ void jeu() {
 
             printf("\nTouche");
 
+            //si boat1 est en vie modifie la valeur
             if (boat1 > 0) {
                 if (board[0][0] < 2 && board[0][1] < 2) {
                     printf("\nTouche coule !");
@@ -130,7 +135,7 @@ void jeu() {
                 }
 
             }
-
+            //si boat2 est en vie modifie la valeur
             if (boat2 > 0) {
                 if (board[2][2] < 3 && board[2][3] < 3 && board[2][4] < 3) {   //bateau(3) C3 E3
                     printf("\nTouche coule !");
@@ -138,7 +143,7 @@ void jeu() {
                     bateaux -= 1;
                 }
             }
-
+            //si boat3 est en vie modifie la valeur
             if (boat3 > 0) {
                 if (board[4][4] < 3 && board[5][4] < 3 && board[6][4] < 3) {   //bateau(3) E5 E7
                     printf("\nTouche coule !");
@@ -146,7 +151,7 @@ void jeu() {
                     bateaux -= 1;
                 }
             }
-
+            //si boat4 est en vie modifie la valeur
             if (boat4 > 0) {
                 if (board[8][4] < 4 && board[8][5] < 4 && board[8][6] < 4 && board[8][7] < 4) {   //bateau(4) E9 H9
                     printf("\nTouche coule !");
@@ -154,7 +159,7 @@ void jeu() {
                     bateaux -= 1;
                 }
             }
-
+            //si boat5 est en vie modifie la valeur
             if (boat5 > 0) {
                 if (board[2][8] < 5 && board[3][8] < 5 && board[4][8] < 5 && board[5][8] < 5 &&
                     board[6][8] < 5) {   //bateau(5) I3 I7
@@ -163,6 +168,7 @@ void jeu() {
                     bateaux -= 1;
                 }
             }
+        //si aucune des conditions est validée plouf
         } else {
             printf("\nPlouf !");
         }
@@ -170,12 +176,14 @@ void jeu() {
         //incremente le compteur de tirs
         tirs += 1;
 
-        // pause de 1 sec
+        //pause de 1 sec
         _sleep(1000);
 
     } while (bateaux > 0);
 
     //message de victoire
     printf("\nVous avez gagne en faisant %d tirs!\n", tirs);
+
+    //pause de 1 sec
     _sleep(1000);
 }

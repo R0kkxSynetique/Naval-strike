@@ -17,7 +17,7 @@
 void jeu() {
 
     char x;
-    int y, bateaux = 5, lineNumber, convertedX, tirs = 0,      //Bateau = 17 (5+4+3+3+2)
+    int y, bateaux = 5, lineNumber, convertedX, tirs = 0,
             boat1 = 1, boat2 = 2, boat3 = 2, boat4 = 3, boat5 = 4;
     int board[MAX_LINE][MAX_ROW] = {                //0 = Water 2 = boat(2) 3 = boat(3) 4 = boat(4) 5 = boat(5)
             {2, 2, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -95,9 +95,13 @@ void jeu() {
 
         //recupere la valeur x en char et la converti en int
         do {
-            printf("\n(A-J) x : ");
+            printf("Pour quitter faites \"+\"\n"
+                   "(A-J) x : ");
             fflush(stdin);
             scanf("%c", &x);
+            if (x == '+'){
+                return;
+            }
             x -= 65;
         } while (x < 0 || x > MAX_ROW);
 
@@ -178,13 +182,12 @@ void jeu() {
         //pause de 1 sec
         _sleep(1000);
 
-    } while (bateaux > 0);
+    } while (bateaux > 0 && stop == 0);
 
     system("cls");
+        //message de victoire
+        printf("\nVous avez fini en faisant %d tirs!\n", tirs);
 
-    //message de victoire
-    printf("\nVous avez fini en faisant %d tirs!\n", tirs);
-
-    //pause de 1 sec
-    _sleep(5000);
+        //pause de 1 sec
+        _sleep(5000);
 }

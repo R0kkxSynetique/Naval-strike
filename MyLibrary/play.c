@@ -184,5 +184,5 @@ void jeu() {
     printf("\nVous avez gagne en faisant %d tirs!\n", tirs);
 
     //pause de 1 sec
-    _sleep(1000);
+    _sleep(5000);
 }

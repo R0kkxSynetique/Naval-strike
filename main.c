@@ -19,10 +19,12 @@ int main()
     // affiche la liste des scores precedent
     // menu de type console
     // CODE COMMANTE !!!!!
+
     //fullscreen
     SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE),CONSOLE_FULLSCREEN_MODE,0);
+
     system("cls");
-    affichageMenuPrincipal();
+
     menuprincipal();
 
     return 0;

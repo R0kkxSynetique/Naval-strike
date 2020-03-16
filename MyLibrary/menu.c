@@ -20,7 +20,7 @@ void affichageMenuPrincipal(){
            "     ---\n");
 
     printf("  1 - Jouer\n"
-           "  2 - Scores\n"
+           "  2 - Scores (Coming soon)\n"
            "  3 - Aide\n"
            "  4 - Options\n"
            "  5 - Quitter");
@@ -43,9 +43,9 @@ void menuprincipal(){
                 jeu();
                 system("cls");
                 break;
-            case 2:
-                file();
-                break;
+//            case 2:
+//                file();
+//                break;
             case 3:
                 system("cls");
                 afiicherRegle();

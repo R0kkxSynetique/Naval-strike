@@ -182,7 +182,7 @@ void jeu() {
         //pause de 1 sec
         _sleep(1000);
 
-    } while (bateaux > 0 && stop == 0);
+    } while (bateaux > 0);
 
     system("cls");
         //message de victoire

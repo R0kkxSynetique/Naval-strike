@@ -56,9 +56,9 @@ void menuprincipal(){
                 break;
 
             //scores
-//            case 2:
-//                file();
-//                break;
+            case 2:
+                saveScores(20);
+                break;
 
             //regles
             case 3:

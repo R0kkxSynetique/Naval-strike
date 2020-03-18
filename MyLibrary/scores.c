@@ -6,10 +6,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <dir.h>
-#include "file.h"
+#include "scores.h"
 
 #define MAX_TEXT_LENGTH 255
 
+/*
+ * recupere les scores et les trie
+ */
 void file() {
 
     char score[MAX_TEXT_LENGTH], username[MAX_TEXT_LENGTH], desktop_path[MAX_TEXT_LENGTH] = "C:\\users\\";

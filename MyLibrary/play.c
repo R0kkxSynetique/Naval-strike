@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dir.h>
+#include "save.h"
 #include "play.h"
 
 #define MAX_LINE 10
@@ -190,4 +191,13 @@ void jeu() {
 
         //pause de 1 sec
         _sleep(5000);
+
+        int yesNo;
+
+        printf("Voulez-vous enregistrer votre score? (1(Oui) / 2(Non)");
+
+        scanf("%d", &yesNo);
+        if (yesNo == 1){
+            saveScores(tirs);
+        }
 }

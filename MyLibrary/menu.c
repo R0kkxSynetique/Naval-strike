@@ -8,9 +8,9 @@
 #include <windows.h>
 #include "menu.h"
 #include "play.h"
-#include "scores.h"
 #include "aide.h"
 #include "options.h"
+#include "save.h"
 
 
 /*
@@ -56,9 +56,9 @@ void menuprincipal(){
                 break;
 
             //scores
-            case 2:
-                saveScores(20);
-                break;
+//            case 2:
+//                ;
+//                break;
 
             //regles
             case 3:

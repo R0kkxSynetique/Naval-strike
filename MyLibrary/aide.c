@@ -5,7 +5,9 @@
 #include "aide.h"
 #include <stdio.h>
 
-
+/*
+ * Affiche les regles
+ */
 void afiicherRegle(){
     printf("\n"
            "Regle\n"

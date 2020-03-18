@@ -8,10 +8,14 @@
 #include <windows.h>
 #include "menu.h"
 #include "play.h"
-#include "file.h"
+#include "scores.h"
 #include "aide.h"
 #include "options.h"
 
+
+/*
+ * affiche le menu pricipal
+ */
 void affichageMenuPrincipal(){
 
     system("cls");
@@ -26,6 +30,9 @@ void affichageMenuPrincipal(){
            "  5 - Quitter");
 }
 
+/*
+ * execute une des fonctions dispo
+ */
 void menuprincipal(){
 
     int choixjoueur,
@@ -49,9 +56,9 @@ void menuprincipal(){
                 break;
 
             //scores
-            case 2:
-                file();
-                break;
+//            case 2:
+//                file();
+//                break;
 
             //regles
             case 3:

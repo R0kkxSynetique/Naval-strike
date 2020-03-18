@@ -31,31 +31,45 @@ void menuprincipal(){
     int choixjoueur,
             error = 0;
 
+    //menu principal
     do{
         affichageMenuPrincipal();
 
+        //recupere le choix
         fflush(stdin);
         scanf("%d",&choixjoueur);
 
+
         switch (choixjoueur)
         {
+            //jeu
             case 1:
                 jeu();
                 system("cls");
                 break;
-//            case 2:
-//                file();
-//                break;
+
+            //scores
+            case 2:
+                file();
+                break;
+
+            //regles
             case 3:
                 system("cls");
                 afiicherRegle();
-                _sleep(35000);
+                //pause de 30 sec
+                _sleep(30000);
                 break;
+
+            //options
             case 4:
                 mainOptions();
                 break;
+
+            //sortie
             case 5:
                 system("exit");
+
             default:
                 printf("\nErreur! Ce choix n'est pas disponible\n");
                 error = 1;

@@ -65,6 +65,9 @@ void afficherMenuPrincipalGrand(){
 
 }
 
+/*
+ * affiche l option couleur en ascii art
+ */
 void afficherOptionColor(){
     printf(" __     __    _      _   _                 _ _  __  __                     _                         _                           _ _                       _ _     _\n"
            " \\ \\   / /__ (_) ___(_) | | ___  ___    __| (_)/ _|/ _| ___ _ __ ___ _ __ | |_ ___    ___ ___  _   _| | ___ _   _ _ __ ___    __| (_)___ _ __   ___  _ __ (_) |__ | | ___  ___\n"
@@ -116,6 +119,9 @@ void afficherOptionColor(){
            "  \\__\\_\\\\__,_|\\___|_|_|\\___|  \\___\\___/ \\__,_|_|\\___|\\__,_|_|     \\__,_|\\___|  \\__\\___/_/\\_\\\\__\\___|   \\_/ \\___/ \\__,_|_|\\___/___|     \\_/ \\___/ \\__,_|___/  (_)\n");
 }
 
+/*
+ * affiche les options en ascii art
+ */
 void afficherOprions(){
     printf(""
            "   ____ _           _         _                                               _   _                                           _ _  __ _\n"

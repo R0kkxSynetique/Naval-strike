@@ -6,6 +6,7 @@
 #include <windows.h>
 #include "options.h"
 #include "menu.h"
+#include "Utils.h"
 
 int concat(int a, int b) {
     char s1[20];
@@ -35,21 +36,11 @@ void color() {
 
     int fond, text;
 
-    system("cls");
-    printf("Voici les differents couleurs disponibles\n"
-           "    0 = Noir        5 = Violet\n"
-           "    1 = Bleu        6 = Jaune\n"
-           "    2 = Vert        7 = Blanc\n"
-           "    3 = Bleu-gris   8 = Gris\n"
-           "    4 = Rouge       9 = Bleu clair\n\n"
-           "Je vous conseil 0 comme premiere couleur pour eviter les surprises oculaires\n\n"
-           "Quelle couleur de texte voulez-vous ?\n");
-
     scanf("%d", &fond);
 
-    system("cls");
-
-    printf("Et quelle couleur de fond voulez-cous ?");
+//    system("cls");
+//
+//    printf("Et quelle couleur de fond voulez-cous ?");
 
     scanf("%d", &text);
 
@@ -75,6 +66,7 @@ void mainOptions() {
             fullscreen();
             break;
         case 2:
+            afficherOptions();
             color();
             break;
     }

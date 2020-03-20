@@ -6,5 +6,6 @@
 #define BATAILLE_NAVALE_UTILS_H
 
 void afficherMenuPrincipalGrand();
+void afficherOptions();
 
 #endif //BATAILLE_NAVALE_UTILS_H

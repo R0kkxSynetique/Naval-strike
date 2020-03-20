@@ -11,6 +11,7 @@
 #include "aide.h"
 #include "options.h"
 #include "save.h"
+#include "readscore.h"
 
 
 /*
@@ -24,7 +25,7 @@ void affichageMenuPrincipal(){
            "     ---\n");
 
     printf("  1 - Jouer\n"
-           "  2 - Scores (Coming soon)\n"
+           "  2 - Scores\n"
            "  3 - Aide\n"
            "  4 - Options\n"
            "  5 - Quitter");
@@ -56,9 +57,10 @@ void menuprincipal(){
                 break;
 
             //scores
-//            case 2:
-//                ;
-//                break;
+            case 2:
+                system("cls");
+                lireFile();
+                break;
 
             //regles
             case 3:

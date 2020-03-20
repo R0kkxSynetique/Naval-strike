@@ -38,10 +38,6 @@ void color() {
 
     scanf("%d", &fond);
 
-//    system("cls");
-//
-//    printf("Et quelle couleur de fond voulez-cous ?");
-
     scanf("%d", &text);
 
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), concat(fond, text));

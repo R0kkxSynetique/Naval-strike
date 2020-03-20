@@ -49,9 +49,9 @@ void menuprincipal(){
             //regles
             case 3:
                 system("cls");
-                afiicherRegle();
+                afficherRegleAscii();
                 //pause de 30 sec
-                _sleep(30000);
+                system("pause");
                 break;
 
             //options

@@ -5,7 +5,9 @@
 #include <stdio.h>
 #include "Utils.h"
 
-
+/*
+ * affiche le menu principal en ascii art
+ */
 void afficherMenuPrincipalGrand(){
     // Bataile Navale
     printf("\n"
@@ -62,3 +64,4 @@ void afficherMenuPrincipalGrand(){
 
 
 }
+

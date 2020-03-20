@@ -6,5 +6,6 @@
 #define BATAILLE_NAVALE_AIDE_H
 
     void afiicherRegle();
+    void afficherRegleAscii();
 
 #endif //BATAILLE_NAVALE_AIDE_H

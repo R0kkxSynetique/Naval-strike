@@ -26,6 +26,9 @@ void afiicherRegle(){
            "souvenir de vos tirs passes.\n\n");
 }
 
+/*
+ * Affiche les regles en ascii
+ */
 void afficherRegleAscii(){
 printf(""
        "  ____            _\n"

@@ -50,9 +50,7 @@ void mainOptions() {
 
     system("cls");
 
-    printf("Choissisez une option a modifier\n\n"
-           "1 - Fullscreen ON/OFF\n"
-           "2 - Couleur\n");
+    afficherOprions();
 
     fflush(stdin);
     scanf("%d", &optionChoice);
@@ -62,8 +60,11 @@ void mainOptions() {
             fullscreen();
             break;
         case 2:
-            afficherOptions();
+            system("cls");
+            afficherOptionColor();
             color();
+            break;
+        default:
             break;
     }
 }

@@ -6,5 +6,6 @@
 #define BATAILLE_NAVALE_OPTIONS_H
 
 void mainOptions();
+void afficherOprions();
 
 #endif //BATAILLE_NAVALE_OPTIONS_H

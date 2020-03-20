@@ -12,24 +12,7 @@
 #include "options.h"
 #include "save.h"
 #include "readscore.h"
-
-
-/*
- * affiche le menu pricipal
- */
-void affichageMenuPrincipal(){
-
-    system("cls");
-
-    printf(" Menu principal\n"
-           "     ---\n");
-
-    printf("  1 - Jouer\n"
-           "  2 - Scores\n"
-           "  3 - Aide\n"
-           "  4 - Options\n"
-           "  5 - Quitter");
-}
+#include "Utils.h"
 
 /*
  * execute une des fonctions dispo
@@ -41,7 +24,8 @@ void menuprincipal(){
 
     //menu principal
     do{
-        affichageMenuPrincipal();
+        system("cls");
+        afficherMenuPrincipalGrand();
 
         //recupere le choix
         fflush(stdin);

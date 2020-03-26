@@ -8,9 +8,8 @@
 #include <dir.h>
 #include "save.h"
 #include "play.h"
+#include "grilles.h"
 
-#define MAX_LINE 10
-#define MAX_ROW 10
 
 /**
  * deroulement de la partie(jeu)

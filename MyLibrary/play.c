@@ -8,7 +8,7 @@
 #include <dir.h>
 #include "save.h"
 #include "play.h"
-#include "grilles.h"
+#include "logs.h"
 
 
 /**
@@ -18,7 +18,7 @@ void jeu() {
 
     char x;
     int y, bateaux = 5, lineNumber, convertedX, tirs = 0,
-            boat1 = 1, boat2 = 2, boat3 = 2, boat4 = 3, boat5 = 4;
+            boat1 = 1, boat2 = 2, boat3 = 2, boat4 = 3, boat5 = 4, type;
     int board[MAX_LINE][MAX_ROW] = {                //0 = Water 2 = boat(2) 3 = boat(3) 4 = boat(4) 5 = boat(5)
             {2, 2, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -128,6 +128,7 @@ void jeu() {
         if (board[y][x] > 0) {
 
             printf("\nTouche");
+            type = 1;
 
             //si boat1 est en vie modifie la valeur
             if (boat1 > 0) {
@@ -174,10 +175,13 @@ void jeu() {
         //si aucune des conditions est validée plouf
         } else {
             printf("\nPlouf !");
+            type = 0;
         }
 
         //incremente le compteur de tirs
         tirs += 1;
+
+        saveLogs(y += 1, x += 65, type);
 
         //pause de 1 sec
         _sleep(1000);

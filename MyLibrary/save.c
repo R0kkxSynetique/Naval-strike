@@ -1,5 +1,5 @@
 //
-// Created by babs2 on 18.03.2020.
+// Created by benjamin.fontana on 18.03.2020.
 //
 
 #include <stdio.h>
@@ -12,15 +12,15 @@ int saveScores(int score) {
 
     char username[20];
 
-    FILE* fichier = NULL;
+    FILE *fichier = NULL;
 
     fichier = fopen("scores.txt", "a");
 
-    if (fichier == NULL){
+    if (fichier == NULL) {
         fichier = fopen("scores.txt", "w");
     }
 
-    if (fichier != NULL){
+    if (fichier != NULL) {
 
         printf("Nom d'utilisateur:");
 
@@ -29,8 +29,7 @@ int saveScores(int score) {
         fprintf(fichier, "%s: %d \n", username, score);
 
         fclose(fichier);
-    }
-    else {
+    } else {
         printf("Erreur d'ouverture de fichier!");
     }
 

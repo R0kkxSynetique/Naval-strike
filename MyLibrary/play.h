@@ -8,14 +8,7 @@
 #define MAX_LINE 10
 #define MAX_ROW 10
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <dir.h>
-
 int lineNumber;
-int board[MAX_LINE][MAX_ROW];
-int playerBoard[MAX_LINE][MAX_ROW];
 
 void jeu();
 

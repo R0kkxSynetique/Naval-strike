@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dir.h>
+#include<time.h>
 #include "save.h"
 #include "play.h"
 #include "logs.h"
@@ -16,37 +17,72 @@
  */
 void jeu() {
 
+    //variables pour le jeu
     char x;
-    int y, bateaux = 5, lineNumber, convertedX, tirs = 0,
-            boat1 = 1, boat2 = 2, boat3 = 2, boat4 = 3, boat5 = 4, type;
-    int board[MAX_LINE][MAX_ROW] = {                //0 = Water 2 = boat(2) 3 = boat(3) 4 = boat(4) 5 = boat(5)
-            {2, 2, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 3, 3, 3, 0, 0, 0, 5, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 5, 0},
-            {0, 0, 0, 0, 3, 0, 0, 0, 5, 0},
-            {0, 0, 0, 0, 3, 0, 0, 0, 5, 0},
-            {0, 0, 0, 0, 3, 0, 0, 0, 5, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 4, 4, 4, 4, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    };
-    int playerBoard[MAX_LINE][MAX_ROW] = {          //Grille que le joueur verra
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    };
+    int y, bateaux = 5, lineNumber, convertedX, tirs = 0, logsType;
+
+    //variabes de bateau
+    int boat1 = 0, boat2 = 0, boat3 = 0, boat4 = 0, boat5 = 0;
+
+    //variables pour la grille
+    int car, compteur = 0, grilleRng;
+    char caractereActuel;
+
+    int board[MAX_LINE][MAX_ROW] = {0};                //0 = Water 2 = boat(2) 3 = boat(3) 4 = boat(4) 5 = boat(5)
+    int playerBoard[MAX_LINE][MAX_ROW] = {0};          //Grille que le joueur verra
+
+    time_t t;
+    srand((unsigned) time(&t));
+
+    grilleRng = rand() & 4;
+
+    FILE *fichier = NULL;
+
+    switch (grilleRng) {
+        case 0:
+            fichier = fopen("grilles/grille0.txt", "r");
+            break;
+        case 2:
+            fichier = fopen("grilles/grille2.txt", "r");
+            break;
+        case 3:
+            fichier = fopen("grilles/grille3.txt", "r");
+            break;
+        case 4:
+            fichier = fopen("grilles/grille4.txt", "r");
+            break;
+        case 5:
+            fichier = fopen("grilles/grille5.txt", "r");
+            break;
+        default:
+            system("exit");
+    }
+
+    if (fichier != NULL) {
+
+        do {
+
+            fscanf(fichier, "%c", &caractereActuel);
+
+            printf("%c", caractereActuel);
+            if (caractereActuel != '\n') {
+                for (int j = 0; j < MAX_LINE; j++) {
+                    for (int k = 0; k < MAX_ROW; k++) {
+                        board[k][j] = (int) caractereActuel;
+                    }
+                }
+            }
+        } while (caractereActuel != EOF);
+        fclose(fichier);
+
+    } else {
+        printf("Le fichier n'a pas pu être ouvert...\n");
+        system("pause");
+    }
 
     do {
 
-        system("cls");
+        //system("cls");
 
         lineNumber = 1;
 
@@ -74,7 +110,7 @@ void jeu() {
                 if (playerBoard[i][j] > 0 && board[i][j] > 0) {
                     printf("%c %c ", 186, 254);
                 }
-                if (playerBoard[i][j] > 0 && board[i][j] <= 0){
+                if (playerBoard[i][j] > 0 && board[i][j] <= 0) {
                     printf("%c%c%c%c", 186, 176, 176, 176);
                 }
                 if (playerBoard[i][j] == 0) {
@@ -99,7 +135,7 @@ void jeu() {
                    "(A-J) x : ");
             fflush(stdin);
             scanf("%c", &x);
-            if (x == '+'){
+            if (x == '+') {
                 return;
             }
             x -= 65;
@@ -119,69 +155,47 @@ void jeu() {
         y -= 1;
 
         //modifie la valeur de l emplacement du tir
-        board[y][x] -= 1;
+        //board[y][x] -= 1;
 
         //modifie la valeur de l affichage du tir
         playerBoard[y][x] += 1;
 
-        //Si la valeur du tableau est pas de l'eau alors...
-        if (board[y][x] > 0) {
-
-            printf("\nTouche");
-            type = 1;
-
-            //si boat1 est en vie modifie la valeur
-            if (boat1 > 0) {
-                if (board[0][0] < 2 && board[0][1] < 2) {
-                    printf("\nTouche coule !");
-                    boat1 = 0;
-                    bateaux -= 1;
-                }
-
+        if (board[x][y] > 0) {
+            logsType = 1;
+            if (board[y][x] == 1 && boat1 < 2) {
+                printf("touche!");
+                boat1++;
             }
-            //si boat2 est en vie modifie la valeur
-            if (boat2 > 0) {
-                if (board[2][2] < 3 && board[2][3] < 3 && board[2][4] < 3) {   //bateau(3) C3 E3
-                    printf("\nTouche coule !");
-                    boat2 = 0;
-                    bateaux -= 1;
-                }
+            if (board[y][x] == 2 && boat2 < 3) {
+                printf("touche!");
+                boat2++;
             }
-            //si boat3 est en vie modifie la valeur
-            if (boat3 > 0) {
-                if (board[4][4] < 3 && board[5][4] < 3 && board[6][4] < 3) {   //bateau(3) E5 E7
-                    printf("\nTouche coule !");
-                    boat3 = 0;
-                    bateaux -= 1;
-                }
+            if (board[y][x] == 3 && boat3 < 3) {
+                printf("touche!");
+                boat3++;
             }
-            //si boat4 est en vie modifie la valeur
-            if (boat4 > 0) {
-                if (board[8][4] < 4 && board[8][5] < 4 && board[8][6] < 4 && board[8][7] < 4) {   //bateau(4) E9 H9
-                    printf("\nTouche coule !");
-                    boat4 = 0;
-                    bateaux -= 1;
-                }
+            if (board[y][x] == 4 && boat4 < 4) {
+                printf("touche!");
+                boat4++;
             }
-            //si boat5 est en vie modifie la valeur
-            if (boat5 > 0) {
-                if (board[2][8] < 5 && board[3][8] < 5 && board[4][8] < 5 && board[5][8] < 5 &&
-                    board[6][8] < 5) {   //bateau(5) I3 I7
-                    printf("\nTouche coule !");
-                    boat5 = 0;
-                    bateaux -= 1;
-                }
+            if (board[y][x] == 5 && boat5 < 5) {
+                printf("touche!");
+                boat5++;
             }
-        //si aucune des conditions est validée plouf
-        } else {
-            printf("\nPlouf !");
-            type = 0;
         }
+
+        if (board[y][x] == 0){
+            printf("plouf!");
+        }
+
+
+        logsType = 0;
 
         //incremente le compteur de tirs
         tirs += 1;
 
-        saveLogs(y += 1, x += 65, type);
+        //sauvegarde les log (coordonnee des tirs)
+        saveLogs(y += 1, x += 65, logsType);
 
         //pause de 1 sec
         _sleep(1000);
@@ -189,18 +203,18 @@ void jeu() {
     } while (bateaux > 0);
 
     system("cls");
-        //message de victoire
-        printf("\nVous avez fini en faisant %d tirs!\n", tirs);
+    //message de victoire
+    printf("\nVous avez fini en faisant %d tirs!\n", tirs);
 
-        //pause de 1 sec
-        _sleep(5000);
+    //pause de 1 sec
+    _sleep(5000);
 
-        int yesNo;
+    int yesNo;
 
-        printf("Voulez-vous enregistrer votre score? (1(Oui) / 2(Non)");
+    printf("Voulez-vous enregistrer votre score? (1(Oui) / 2(Non)");
 
-        scanf("%d", &yesNo);
-        if (yesNo == 1){
-            saveScores(tirs);
-        }
+    scanf("%d", &yesNo);
+    if (yesNo == 1) {
+        saveScores(tirs);
+    }
 }

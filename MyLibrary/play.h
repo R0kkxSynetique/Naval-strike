@@ -5,10 +5,8 @@
 #ifndef BATAILLE_NAVALE_PLAY_H
 #define BATAILLE_NAVALE_PLAY_H
 
-#define MAX_LINE 10
-#define MAX_ROW 10
-
-int lineNumber;
+#define MAX_LIGNE 10
+#define MAX_COLONNE 10
 
 void jeu();
 

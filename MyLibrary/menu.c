@@ -11,7 +11,7 @@
 #include "aide.h"
 #include "options.h"
 #include "sauvgarder.h"
-#include "readscore.h"
+#include "lirescore.h"
 #include "Utils.h"
 
 /*
@@ -43,7 +43,7 @@ void menuprincipal(){
             //scores
             case 2:
                 system("cls");
-                lireFile();
+                lireFichier();
                 break;
 
             //regles

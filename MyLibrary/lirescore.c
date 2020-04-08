@@ -4,18 +4,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "readscore.h"
+#include "lirescore.h"
 
 /*
  * lis tout les caractères du fichier scores
  */
-void lireFile(){
+void lireFichier(){
 
     char caractere;
 
     FILE* fichier = NULL;
 
-    fichier = fopen("scores.txt", "r");
+    fichier = fopen("files/scores.txt", "r");
 
     if (fichier != NULL) {
         do {

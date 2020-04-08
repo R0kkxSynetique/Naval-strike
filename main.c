@@ -20,7 +20,7 @@ int main()
     // menu de type console
     // CODE COMMANTE !!!!!
 
-    //fullscreen
+    //pleinEcran
     SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE),CONSOLE_FULLSCREEN_MODE,0);
 
     system("cls");

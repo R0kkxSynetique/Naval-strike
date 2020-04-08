@@ -57,7 +57,7 @@ void menuprincipal(){
             //options
             case 4:
                 system("cls");
-                mainOptions();
+                optionPrincipale();
                 break;
 
             //sortie

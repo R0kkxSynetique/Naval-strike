@@ -5,12 +5,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "readscore.h"
+
 /*
  * lis tout les caractères du fichier scores
  */
 void lireFile(){
 
-    char character;
+    char caractere;
 
     FILE* fichier = NULL;
 
@@ -18,9 +19,9 @@ void lireFile(){
 
     if (fichier != NULL) {
         do {
-            character = fgetc(fichier);
-            printf("%c", character);
-        } while (character != EOF);
+            caractere = fgetc(fichier);
+            printf("%c", caractere);
+        } while (caractere != EOF);
     }
 
     system("pause");

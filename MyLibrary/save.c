@@ -8,9 +8,9 @@
 #include <dir.h>
 #include "save.h"
 
-int saveScores(int score) {
+int savegarderScore(int score) {
 
-    char username[20];
+    char nomUtilisateur[20];
 
     FILE *fichier = NULL;
 
@@ -24,9 +24,9 @@ int saveScores(int score) {
 
         printf("Nom d'utilisateur:");
 
-        scanf("%s", username);
+        scanf("%s", nomUtilisateur);
 
-        fprintf(fichier, "%s: %d \n", username, score);
+        fprintf(fichier, "%s: %d \n", nomUtilisateur, score);
 
         fclose(fichier);
     } else {

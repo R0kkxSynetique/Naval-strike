@@ -5,7 +5,7 @@
 #ifndef BATAILLE_NAVALE_OPTIONS_H
 #define BATAILLE_NAVALE_OPTIONS_H
 
-void mainOptions();
+void optionPrincipale();
 void afficherOprions();
 
 #endif //BATAILLE_NAVALE_OPTIONS_H

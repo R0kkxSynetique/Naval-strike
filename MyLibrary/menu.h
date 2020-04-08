@@ -6,10 +6,8 @@
 #ifndef BATAILLE_NAVALE_MENU_H
 #define BATAILLE_NAVALE_MENU_H
 
-//affiche le menu principal
 void affichageMenuPrincipal();
 
-//switch menu principal
 void menuprincipal();
 
 #endif //BATAILLE_NAVALE_MENU_H

@@ -5,6 +5,6 @@
 #ifndef BATAILLE_NAVALE_SAVE_H
 #define BATAILLE_NAVALE_SAVE_H
 
-int saveScores(int score);
+int savegarderScore(int score);
 
 #endif //BATAILLE_NAVALE_SAVE_H

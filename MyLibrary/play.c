@@ -171,7 +171,7 @@ void jeu() {
         if (grille[y][x] > 0) {
 
             typeLogs = 1;
-            
+
             //donne le resultat du tir
             switch (grille[y][x]) {
                 case 1:
@@ -253,6 +253,6 @@ void jeu() {
     //verifie si l'utilisateur veux sauvegarder ou non
     scanf("%d", &yesNo);
     if (yesNo == 1) {
-        saveScores(tirs);
+        savegarderScore(tirs);
     }
 }

@@ -232,7 +232,7 @@ void jeu() {
         tirs += 1;
 
         //sauvegarde les log (coordonnee des tirs)
-        saveLogs(y += 1, x += 65, typeLogs);
+        sauvgarderLogs(y += 1, x += 65, typeLogs);
 
         //pause de 1 sec
         _sleep(1000);

@@ -9,7 +9,7 @@
 #include <time.h>
 #include "logs.h"
 
-void saveLogs( int y, char x, int type) {
+void sauvgarderLogs(int y, char x, int type) {
 
     time_t actualTime = time(NULL);
     char * time_str = ctime(&actualTime);
@@ -17,7 +17,7 @@ void saveLogs( int y, char x, int type) {
 
     FILE *fichier = NULL;
 
-    fichier = fopen("logs.txt", "a");
+    fichier = fopen("files/logs.txt", "a");
 
     if (fichier == NULL) {
         fichier = fopen("logs.txt", "w");

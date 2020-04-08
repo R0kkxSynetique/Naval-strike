@@ -5,6 +5,6 @@
 #ifndef BATAILLE_NAVALE_LOGS_H
 #define BATAILLE_NAVALE_LOGS_H
 
-void saveLogs(int y, char x, int type);
+void sauvgarderLogs(int y, char x, int type);
 
 #endif //BATAILLE_NAVALE_LOGS_H

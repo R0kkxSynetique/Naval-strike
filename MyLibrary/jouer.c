@@ -180,7 +180,7 @@ void jeu() {
                         bateau1++;
                     } else {
                         printf("touche coule!");
-                        bateaux++;
+                        bateaux--;
                     }
                     break;
                 case 2:
@@ -189,7 +189,7 @@ void jeu() {
                         bateau2++;
                     } else {
                         printf("touche coule!");
-                        bateaux++;
+                        bateaux--;
                     }
                     break;
                 case 3:
@@ -198,7 +198,7 @@ void jeu() {
                         bateau3++;
                     } else {
                         printf("touche coule!");
-                        bateaux++;
+                        bateaux--;
                     }
                     break;
                 case 4:
@@ -207,7 +207,7 @@ void jeu() {
                         bateau4++;
                     } else {
                         printf("touche coule!");
-                        bateaux++;
+                        bateaux--;
                     }
                     break;
                 case 5:
@@ -216,7 +216,7 @@ void jeu() {
                         bateau5++;
                     } else {
                         printf("touche coule!");
-                        bateaux++;
+                        bateaux--;
                     }
                     break;
                 default:

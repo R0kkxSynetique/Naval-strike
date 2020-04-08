@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <dir.h>
-#include "save.h"
+#include "sauvgarder.h"
 
 int savegarderScore(int score) {
 
@@ -14,7 +14,7 @@ int savegarderScore(int score) {
 
     FILE *fichier = NULL;
 
-    fichier = fopen("scores.txt", "a");
+    fichier = fopen("files/scores.txt", "a");
 
     if (fichier == NULL) {
         fichier = fopen("scores.txt", "w");

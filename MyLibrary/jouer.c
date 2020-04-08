@@ -8,8 +8,8 @@
 #include <dir.h>
 #include<time.h>
 #include <ctype.h>
-#include "save.h"
-#include "play.h"
+#include "sauvgarder.h"
+#include "jouer.h"
 #include "logs.h"
 
 

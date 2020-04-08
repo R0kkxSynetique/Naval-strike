@@ -7,10 +7,10 @@
 #include <dir.h>
 #include <windows.h>
 #include "menu.h"
-#include "play.h"
+#include "jouer.h"
 #include "aide.h"
 #include "options.h"
-#include "save.h"
+#include "sauvgarder.h"
 #include "readscore.h"
 #include "Utils.h"
 

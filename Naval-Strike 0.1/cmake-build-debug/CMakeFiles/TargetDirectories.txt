@@ -1,0 +1,3 @@
+C:/Users/Benjamin.FONTANA/Documents/GitHub/Prog-C/Naval-strike/Naval-Strike 0.1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Benjamin.FONTANA/Documents/GitHub/Prog-C/Naval-strike/Naval-Strike 0.1/cmake-build-debug/CMakeFiles/Naval_Strike_0_1.dir
+C:/Users/Benjamin.FONTANA/Documents/GitHub/Prog-C/Naval-strike/Naval-Strike 0.1/cmake-build-debug/CMakeFiles/edit_cache.dir
